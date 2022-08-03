@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContentBlockController;
+use App\Http\Controllers\SocialMediaController;
 use App\Models\Project;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
@@ -9,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes    
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -57,3 +59,21 @@ Route::post('/console/types/add', [TypesController::class, 'add'])->middleware('
 Route::get('/console/types/edit/{type:id}', [TypesController::class, 'editForm'])->where('type', '[0-9]+')->middleware('auth');
 Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->where('type', '[0-9]+')->middleware('auth');
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
+
+Route::get('/console/content-blocks/list', [ContentBlockController::class, 'list'])->middleware('auth');
+Route::get('/console/content-blocks/add', [ContentBlockController::class, 'addForm'])->middleware('auth');
+Route::post('/console/content-blocks/add', [ContentBlockController::class, 'add'])->middleware('auth');
+Route::get('/console/content-blocks/edit/{content_block:id}', [ContentBlockController::class, 'editForm'])->where('content_block', '[0-9]+')->middleware('auth');
+Route::post('/console/content-blocks/edit/{content_block:id}', [ContentBlockController::class, 'edit'])->where('content_block', '[0-9]+')->middleware('auth');
+Route::get('/console/content-blocks/delete/{content_block:id}', [ContentBlockController::class, 'delete'])->where('content_block', '[0-9]+')->middleware('auth');
+Route::get('/console/content-blocks/image/{content_block:id}', [ContentBlockController::class, 'imageForm'])->where('content_block', '[0-9]+')->middleware('auth');
+Route::post('/console/content-blocks/image/{content_block:id}', [ContentBlockController::class, 'image'])->where('content_block', '[0-9]+')->middleware('auth');
+
+Route::get('/console/social-media/list', [SocialMediaController::class, 'list'])->middleware('auth');
+Route::get('/console/social-media/add', [SocialMediaController::class, 'addForm'])->middleware('auth');
+Route::post('/console/social-media/add', [SocialMediaController::class, 'add'])->middleware('auth');
+Route::get('/console/social-media/edit/{social_media:id}', [SocialMediaController::class, 'editForm'])->where('social_media', '[0-9]+')->middleware('auth');
+Route::post('/console/social-media/edit/{social_media:id}', [SocialMediaController::class, 'edit'])->where('social_media', '[0-9]+')->middleware('auth');
+Route::get('/console/social-media/delete/{social_media:id}', [SocialMediaController::class, 'delete'])->where('social_media', '[0-9]+')->middleware('auth');
+Route::get('/console/social-media/image/{social_media:id}', [SocialMediaController::class, 'imageForm'])->where('social_media', '[0-9]+')->middleware('auth');
+Route::post('/console/social-media/image/{social_media:id}', [SocialMediaController::class, 'image'])->where('social_media', '[0-9]+')->middleware('auth');

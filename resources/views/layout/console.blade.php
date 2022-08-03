@@ -8,9 +8,9 @@
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{url('app.css')}}">
-
+        <script src="https://kit.fontawesome.com/ca8a2a996a.js" crossorigin="anonymous"></script>
         <script src="{{url('app.js')}}"></script>
-        
+
     </head>
     <body>
 
@@ -20,8 +20,8 @@
 
             @if (Auth::check())
                 You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
+                <a href="/console/logout">Log Out</a> |
+                <a href="/console/dashboard">Dashboard</a> |
                 <a href="/">Website Home Page</a>
             @else
                 <a href="/">Return to My Portfolio</a>
