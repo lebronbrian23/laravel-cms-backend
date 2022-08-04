@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ContentBlockController;
 use App\Http\Controllers\SocialMediaController;
 use App\Models\Project;
@@ -77,3 +78,12 @@ Route::post('/console/social-media/edit/{social_media:id}', [SocialMediaControll
 Route::get('/console/social-media/delete/{social_media:id}', [SocialMediaController::class, 'delete'])->where('social_media', '[0-9]+')->middleware('auth');
 Route::get('/console/social-media/image/{social_media:id}', [SocialMediaController::class, 'imageForm'])->where('social_media', '[0-9]+')->middleware('auth');
 Route::post('/console/social-media/image/{social_media:id}', [SocialMediaController::class, 'image'])->where('social_media', '[0-9]+')->middleware('auth');
+
+Route::get('/console/skill/list', [SkillController::class, 'list'])->middleware('auth');
+Route::get('/console/skill/add', [SkillController::class, 'addForm'])->middleware('auth');
+Route::post('/console/skill/add', [SkillController::class, 'add'])->middleware('auth');
+Route::get('/console/skill/edit/{skills:id}', [SkillController::class, 'editForm'])->where('skills', '[0-9]+')->middleware('auth');
+Route::post('/console/skill/edit/{skills:id}', [SkillController::class, 'edit'])->where('skills', '[0-9]+')->middleware('auth');
+Route::get('/console/skill/delete/{skills:id}', [SkillController::class, 'delete'])->where('skills', '[0-9]+')->middleware('auth');
+Route::get('/console/skill/image/{skills:id}', [SkillController::class, 'imageForm'])->where('skills', '[0-9]+')->middleware('auth');
+Route::post('/console/skill/image/{skills:id}', [SkillController::class, 'image'])->where('skills', '[0-9]+')->middleware('auth');
