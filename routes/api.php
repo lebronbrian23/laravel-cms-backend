@@ -3,6 +3,7 @@
 use App\Models\ContentBlock;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Type;
@@ -126,7 +127,6 @@ Route::get('/social-media-links', function(){
  * Route to get a single social media
  */
 Route::get('/social-media-link/{social_media:id}', function(SocialMedia $social_media){
-
     if($social_media['image'])
     {
         $social_media['image'] = env('APP_URL').'storage/'.$social_media['image'];
