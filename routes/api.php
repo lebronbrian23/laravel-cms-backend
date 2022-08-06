@@ -3,7 +3,6 @@
 use App\Models\ContentBlock;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Type;
