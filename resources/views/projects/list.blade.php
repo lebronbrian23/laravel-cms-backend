@@ -2,12 +2,16 @@
 
 @section ('content')
 
-<section class="w3-padding">
-
-    <h2>Manage Projects</h2>
-
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
+<section>
+    <!--Banner-->
+    <div class="w3-center w3-padding-24 page-banner">
+        <h3>Manage Projects</h3>
+    </div>
+    <!--Content-->
+    <div class="w3-container w3-center w3-padding-32">
+    <div class="w3-content w3-justify">
+      <table class="w3-table w3-bordered w3-white">
+        <tr>
             <th></th>
             <th>Title</th>
             <th>Slug</th>
@@ -21,7 +25,7 @@
             <tr>
                 <td>
                     @if ($project->image)
-                        <img src="{{asset('/storage/'.$project->image)}}" width="200">
+                        <img src="{{asset('/storage/'.$project->image)}}" width="50">
                     @endif
                 </td>
                 <td>{{$project->title}}</td>
@@ -32,15 +36,16 @@
                 </td>
                 <td>{{$project->type->title}}</td>
                 <td>{{$project->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/projects/image/{{$project->id}}">Image</a></td>
-                <td><a href="/console/projects/edit/{{$project->id}}">Edit</a></td>
-                <td><a href="/console/projects/delete/{{$project->id}}">Delete</a></td>
+                <td><a href="/console/projects/image/{{$project->id}}" class="fake-button">Image</a></td>
+                <td><a href="/console/projects/edit/{{$project->id}}" class="fake-button">Edit</a></td>
+                <td><a href="/console/projects/delete/{{$project->id}}" class="fake-button">Delete</a></td>
             </tr>
         @endforeach
-    </table>
-
-    <a href="/console/projects/add" class="w3-button w3-green">New Project</a>
-
+        </table>
+        <div class="w3-center w3-padding-16">
+            <a href="/console/projects/add" class="w3-button button">New Project</a>
+        </div>
+    </div>
 </section>
 
 @endsection
