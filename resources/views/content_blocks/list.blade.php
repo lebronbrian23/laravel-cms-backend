@@ -2,21 +2,25 @@
 
 @section ('content')
 
-<section class="w3-padding">
-
-    <h2>Manage Content Blocks</h2>
-
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
-            <th></th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Created</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
+<section>
+    <!--Banner-->
+    <div class="w3-center w3-padding-24 page-banner">
+        <h3>Manage Content Blocks</h3>
+    </div>
+    <!--Content-->
+    <div class="w3-container w3-center w3-padding-32">
+        <div class="w3-content w3-justify">
+        <table class="w3-table w3-bordered w3-white">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Created</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
         @foreach ($content_blocks as $content_block)
             <tr>
                 <td>
@@ -28,15 +32,16 @@
                 <td>{{$content_block->description}}</td>
                 <td>{{$content_block->type}}</td>
                 <td>{{$content_block->created_at->format('M j, Y')}}</td>
-                <td><a href="/console/content-blocks/image/{{$content_block->id}}">Image</a></td>
-                <td><a href="/console/content-blocks/edit/{{$content_block->id}}">Edit</a></td>
-                <td><a href="/console/content-blocks/delete/{{$content_block->id}}">Delete</a></td>
+                <td><a href="/console/content-blocks/image/{{$content_block->id}}" class="fake-button">Image</a></td>
+                <td><a href="/console/content-blocks/edit/{{$content_block->id}}" class="fake-button">Edit</a></td>
+                <td><a href="/console/content-blocks/delete/{{$content_block->id}}" class="fake-button">Delete</a></td>
             </tr>
         @endforeach
-    </table>
-
-    <a href="/console/content-blocks/add" class="w3-button w3-green">New Content Block</a>
-
+        </table>
+        <div class="w3-center w3-padding-16">
+            <a href="/console/content-blocks/add" class="w3-button button">New Content Block</a>
+        </div>
+    </div>
 </section>
 
 @endsection

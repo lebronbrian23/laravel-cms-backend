@@ -135,3 +135,34 @@ Route::get('/social-media-link/{social_media:id}', function(SocialMedia $social_
     return $social_media;
 
 });
+/**
+ * Route to get all skills
+ */
+Route::get('/skill-links', function(){
+
+    $skills = Skill::orderBy('created_at')->get();
+
+    foreach($skills as $key => $media)
+    {
+
+        if($media['image'])
+        {
+            $skills[$key]['image'] = env('APP_URL').'storage/'.$media['image'];
+        }
+    }
+
+    return $skills;
+
+});
+/**
+ * Route to get a single skill
+ */
+Route::get('/skill-link/{skills:id}', function(Skill $skills){
+    if($skills['image'])
+    {
+        $skills['image'] = env('APP_URL').'storage/'.$skills['image'];
+    }
+
+    return $skills;
+
+});

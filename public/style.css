@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Cabin&display=swap');
+
+/* General Styles */
+body {
+    background-color: #F0F4EF;
+}
+body, h1, h2, h4 {
+    font-family: "Cabin", sans-serif
+}
+h3 {
+    font-family: 'Bitter', serif;
+    color: #F0F4EF;
+    text-decoration: underline;
+    text-decoration-color: #F6AE2D
+}
+th, li {
+    font-family: 'Bitter', serif;
+}
+ul {
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 10px !important;
+}
+i {
+    color: #F6AE2D
+}
+
+/* Custom Classes */
+.sidebar-style {
+    background-color: #2F4858;
+    color: #F0F4EF;
+    z-index:3;
+    width:250px;
+}
+.main-container {
+    margin-left:250px    
+}
+.main-container a:link, a:visited {
+    text-decoration: underline;
+    text-decoration-color: #F6AE2D
+}
+.main-container a:hover, a:active {
+    background-color: #F6AE2D
+}
+.page-banner {
+    background-color: #33658A;
+    color: #F0F4EF;
+}
+.top-gap {
+    margin-top:84px
+}
+.message-popup {
+    background-color: #F6AE2D
+}
+.button {
+    background-color: #F6AE2D;
+    color: #F0F4EF;
+}
+.fake-button {
+    background-color: #33658A;
+    color: #F0F4EF;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none !important;
+}

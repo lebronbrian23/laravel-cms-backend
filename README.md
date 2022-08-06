@@ -1,8 +1,23 @@
-# Laravel CMS using Blade Views
+# PHP Client Management System
 
-This repository is copy of the simple [PHP/Laravel CMS](https://github.com/codeadamca/php-cms-laravel) except the CMS views have been converted from vanilla PHP to Blade.
+This repository is a simple CMS using Laravel and W3.CSS. The code consists of a login, a dashboard, a place to view/add/edit/delete users, and a place to view/add/edit/delete content.
 
-A few notes regarding the CMS:
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contribution</th>
+    </tr>
+    <tr>
+        <td>Beth Jarrett</td>
+        <td>Skills, Front-End Design & Execution</td>
+     </tr>
+     <tr>
+        <td>Brian Ssekalegga</td>
+        <td>Content Blocks, Social Media, API & Technical Support</td>
+    </tr>
+ </table>
+
+Notes:
 
 The CMS uses the public storage driver, make sure to update your .env file to:
 
@@ -15,16 +30,15 @@ The database setup includes migrations and seeding. Run the following command to
 ```
 php artisan migrate:refresh --seed
 ```
-
-All user acocunts will have the default password of "password".
-
-## Tutorial Requirements:
-
-* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
-* [Laravel](https://laravel.com/)
-
 Full tutorial URL: https://codeadam.ca/learning/php-cms-laravel.html
 
-<a href="https://codeadam.ca">
-<img src="https://codeadam.ca/images/code-block.png" width="100">
-</a>
+<table>
+  <tr>
+    <td>Admin Username:</td>
+    <td>email@address.com</td>
+  </tr>
+  <tr>
+    <td>Admin Password:</td>
+    <td>password</td>
+    </tr>
+</table>
