@@ -14,9 +14,13 @@
 <body class="w3-content">
 
 <!-- Nav -->
+
     <nav class="w3-sidebar w3-bar-block w3-collapse w3-top sidebar-style" id="mySidebar"><br>
-        <h2 class="w3-padding-64 w3-center">Dashboard</h2>
-        <ul>
+        @if (!Auth::check())<h2 class="w3-padding-64 w3-center">Admin Login</h2>@endif
+        @if (Auth::check())
+            <h2 class="w3-padding-64 w3-center">Dashboard</h2>
+
+            <ul>
             <li><a href="/console/projects/list" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa-solid fa-list-check"></i>&nbsp;&nbsp;Projects</a></li>
             <li><a href="/console/types/list" onclick="w3_close()" class="w3-bar-item w3-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-folder-tree"></i>&nbsp;&nbsp;Project Types</a></li>
             <li><a href="/console/skill/list" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;&nbsp;Skills</a></li>
@@ -26,6 +30,7 @@
             <li><a href="/console/logout" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;Logout</a></li>
             <li><a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding w3-hide-large" onclick="w3_close()">CLOSE</a></li>
         </ul>
+        @endif
     </nav>
 <!-- Top: Small Screen -->
     <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
@@ -50,7 +55,7 @@
         @endif
 
 <!-- Footer -->
-        <footer class="w3-center w3-padding-24 page-banner">  
+        <footer class="w3-center w3-padding-24 page-banner">
         @if (Auth::check())
             You are logged in as {{auth()->user()->first}} {{auth()->user()->last}}
             <p><a href="/console/dashboard">Dashboard</a> | <a href="/">Website Home Page</a></p>
