@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ContentBlock::truncate();
         SocialMedia::truncate();
 
-        User::factory()->count(2)->create();
+        User::factory()->count(1)->create();
         Type::factory()->count(3)->create();
         Project::factory()->count(4)->create();
         ContentBlock::factory()->count(1)->create();
