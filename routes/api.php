@@ -158,10 +158,7 @@ Route::get('/skill-links', function(){
  * Route to get a single skill
  */
 Route::get('/skill-link/{skills:id}', function(Skill $skills){
-    if($skills['image'])
-    {
-        $skills['image'] = $skills['image'];
-    }
+
 
     return $skills;
 
