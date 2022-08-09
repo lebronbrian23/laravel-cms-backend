@@ -47,7 +47,7 @@ Route::get('/projects', function(){
 
         if($project['image'])
         {
-            $projects[$key]['image'] = env('APP_URL').'storage/'.$project['image'];
+            $projects[$key]['image'] =  $project['image'];
         }
     }
 
@@ -64,7 +64,7 @@ Route::get('/projects/profile/{project?}', function(Project $project){
 
     if($project['image'])
     {
-        $project['image'] = env('APP_URL').'storage/'.$project['image'];
+        $project['image'] =  $project['image'];
     }
 
     return $project;
@@ -83,7 +83,7 @@ Route::get('/content-blocks', function(){
 
         if($content_block['image'])
         {
-            $content_blocks[$key]['image'] = env('APP_URL').'storage/'.$content_block['image'];
+            $content_blocks[$key]['image'] =  $content_block['image'];
         }
     }
 
@@ -97,7 +97,7 @@ Route::get('/content-blocks/{content_block:id}', function(ContentBlock $content_
 
     if($content_block['image'])
     {
-        $content_block['image'] = env('APP_URL').'storage/'.$content_block['image'];
+        $content_block['image'] =  $content_block['image'];
     }
 
     return $content_block;
@@ -116,7 +116,7 @@ Route::get('/social-media-links', function(){
 
         if($media['image'])
         {
-            $social_media[$key]['image'] = env('APP_URL').'storage/'.$media['image'];
+            $social_media[$key]['image'] =  $media['image'];
         }
     }
 
@@ -129,7 +129,7 @@ Route::get('/social-media-links', function(){
 Route::get('/social-media-link/{social_media:id}', function(SocialMedia $social_media){
     if($social_media['image'])
     {
-        $social_media['image'] = env('APP_URL').'storage/'.$social_media['image'];
+        $social_media['image'] = $social_media['image'];
     }
 
     return $social_media;
@@ -147,7 +147,7 @@ Route::get('/skill-links', function(){
 
         if($media['image'])
         {
-            $skills[$key]['image'] = env('APP_URL').'storage/'.$media['image'];
+            $skills[$key]['image'] = $media['image'];
         }
     }
 
@@ -160,7 +160,7 @@ Route::get('/skill-links', function(){
 Route::get('/skill-link/{skills:id}', function(Skill $skills){
     if($skills['image'])
     {
-        $skills['image'] = env('APP_URL').'storage/'.$skills['image'];
+        $skills['image'] = $skills['image'];
     }
 
     return $skills;

@@ -22,7 +22,7 @@ Notes:
 The CMS uses the public storage driver, make sure to update your .env file to:
 
 ```php
-FILESYSTEM_DRIVER=public
+FILESYSTEM_DRIVER=s3
 ```
 
 The database setup includes migrations and seeding. Run the following command to initialize the database:
