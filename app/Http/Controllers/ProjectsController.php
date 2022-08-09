@@ -25,7 +25,7 @@ class ProjectsController extends Controller
             'types' => Type::all(),
         ]);
     }
-    
+
     public function add()
     {
 
@@ -87,9 +87,9 @@ class ProjectsController extends Controller
     public function delete(Project $project)
     {
         $project->delete();
-        
+
         return redirect('/console/projects/list')
-            ->with('message', 'Project has been deleted!');        
+            ->with('message', 'Project has been deleted!');
     }
 
     public function imageForm(Project $project)
@@ -106,15 +106,13 @@ class ProjectsController extends Controller
             'image' => 'required|image',
         ]);
 
-        Storage::delete($project->image);
-        
-        $path = request()->file('image')->store('projects');
+        $path = request()->file('image')->store('skills' ,'s3');
 
-        $project->image = $path;
+        $project->image = Storage::disk('s3')->url($path);
         $project->save();
-        
+
         return redirect('/console/projects/list')
             ->with('message', 'Project image has been edited!');
     }
-    
+
 }

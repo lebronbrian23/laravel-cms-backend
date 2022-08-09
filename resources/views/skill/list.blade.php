@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     @if ($skill->image)
-                        <img src="{{asset('/storage/'.$skill->image)}}" width="200">
+                        <img src="{{$skill->image}}" width="200">
                     @endif
                 </td>
                 <td>{{$skill->name}}</td>

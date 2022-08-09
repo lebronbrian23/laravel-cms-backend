@@ -90,9 +90,9 @@ class SocialMediaController extends Controller
 
         Storage::delete($social_media->image);
 
-        $path = request()->file('image')->store('social_media');
+        $path = request()->file('image')->store('skills' ,'s3');
 
-        $social_media->image = $path;
+        $social_media->image = Storage::disk('s3')->url($path);
         $social_media->save();
 
         return redirect('/console/social-media/list')

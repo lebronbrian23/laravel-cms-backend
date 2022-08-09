@@ -25,7 +25,7 @@
                 <tr>
                     <td>
                         @if ($social_media->image)
-                            <img src="{{asset('/storage/'.$social_media->image)}}" width="200">
+                            <img src="{{$social_media->image}}" width="200">
                         @endif
                     </td>
                     <td>{{$social_media->name}}</td>

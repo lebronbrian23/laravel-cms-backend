@@ -11,7 +11,7 @@
     <div class="w3-container w3-padding-32">
     <div class="w3-margin-bottom">
         @if($content_block->image)
-            <img src="{{asset('storage/'.$content_block->image)}}" width="200">
+            <img src="{{$content_block->image}}" width="200">
         @endif
     </div>
 

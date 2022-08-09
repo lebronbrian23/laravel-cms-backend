@@ -89,11 +89,9 @@ class ContentBlockController extends Controller
             'image' => 'required|image',
         ]);
 
-        Storage::delete($content_block->image);
+        $path = request()->file('image')->store('content_blocks' ,'s3');
 
-        $path = request()->file('image')->store('content_blocks');
-
-        $content_block->image = $path;
+        $content_block->image = Storage::disk('s3')->url($path);
         $content_block->save();
 
         return redirect('/console/content-blocks/list')

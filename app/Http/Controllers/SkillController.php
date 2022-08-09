@@ -80,11 +80,10 @@ class SkillController extends Controller
             'image' => 'required|image',
         ]);
 
-        Storage::delete($skills->image);
 
-        $path = request()->file('image')->store('skills');
+        $path = request()->file('image')->store('skills' ,'s3');
 
-        $skills->image = $path;
+        $skills->image = Storage::disk('s3')->url($path);
         $skills->save();
 
         return redirect('/console/skill/list')

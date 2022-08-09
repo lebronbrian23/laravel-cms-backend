@@ -11,7 +11,7 @@
     <div class="w3-container w3-padding-32">
     <div class="w3-margin-bottom">
         @if($social_media->image)
-            <img src="{{asset('storage/'.$social_media->image)}}" width="200">
+            <img src="{{$social_media->image}}" width="200">
         @endif
     </div>
 
