@@ -62,11 +62,6 @@ Route::get('/projects/profile/{project?}', function(Project $project){
     $project['user'] = User::where('id', $project['user_id'])->first();
     $project['type'] = Type::where('id', $project['type_id'])->first();
 
-    if($project['image'])
-    {
-        $project['image'] =  $project['image'];
-    }
-
     return $project;
 
 });
@@ -90,18 +85,12 @@ Route::get('/content-blocks', function(){
     return $content_blocks;
 
 });
+
 /**
- * Route to get a single content block by id
+ * Route to get a single content block by type
  */
-Route::get('/content-blocks/{content_block:id}', function(ContentBlock $content_block){
-
-    if($content_block['image'])
-    {
-        $content_block['image'] =  $content_block['image'];
-    }
-
+Route::get('/content-blocks/{content_block:type}', function(ContentBlock $content_block){
     return $content_block;
-
 });
 
 /**
@@ -127,10 +116,6 @@ Route::get('/social-media-links', function(){
  * Route to get a single social media
  */
 Route::get('/social-media-link/{social_media:id}', function(SocialMedia $social_media){
-    if($social_media['image'])
-    {
-        $social_media['image'] = $social_media['image'];
-    }
 
     return $social_media;
 
@@ -158,7 +143,6 @@ Route::get('/skill-links', function(){
  * Route to get a single skill
  */
 Route::get('/skill-link/{skills:id}', function(Skill $skills){
-
 
     return $skills;
 
