@@ -29,7 +29,7 @@
                     @endif
                 </td>
                 <td>{{$content_block->name}}</td>
-                <td>{{$content_block->description}}</td>
+                <td>{!!$content_block->description!!}</td>
                 <td>{{$content_block->type}}</td>
                 <td>{{$content_block->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/content-blocks/image/{{$content_block->id}}" class="fake-button">Image</a></td>

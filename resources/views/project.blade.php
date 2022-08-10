@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <p><{{$project->content}}</p>
+    <p>{!!$project->content!!}</p>
 
     @if ($project->url)
         View Project: <a href="{{$project->url}}">{{$project->url}}</a>

@@ -28,7 +28,7 @@
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
             <label for="description">Description:</label>
-            </div><div class="w3-col m4">
+            </div><div class="w3-col m8">
             <textarea name="description" id="description" required>{{old('description', $content_block->description)}}</textarea>
 
             @if ($errors->first('description'))

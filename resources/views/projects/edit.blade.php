@@ -18,7 +18,7 @@
             <label for="title">Title:</label>
             </div><div class="w3-col m4">
             <input type="title" name="title" id="title" value="{{old('title', $project->title)}}" required>
-            
+
             @if ($errors->first('title'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('title')}}</span>
@@ -51,9 +51,9 @@
 
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
-            <label for="content">Content:</label>
-            </div><div class="w3-col m4">
-            <textarea name="content" id="content" required>{{old('content', $project->content)}}</textarea>
+            <label for="description">Content:</label>
+            </div><div class="w3-col m8">
+            <textarea name="content" id="description" required>{{old('content', $project->content)}}</textarea>
 
             @if ($errors->first('content'))
                 <br>

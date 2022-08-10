@@ -29,7 +29,7 @@
         <div class="w3-row w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
                 <label for="description">Description:</label>
-            </div><div class="w3-col m4">
+            </div><div class="w3-col m8">
                 <textarea name="description" id="description" required>{{old('description')}}</textarea>
 
             @if ($errors->first('content'))
@@ -42,7 +42,7 @@
         <div class="w3-row w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
                 <label for="type">Type:</label>
-            </div><div class="w3-col m4">                
+            </div><div class="w3-col m4">
             <input type="text" name="type" id="type" value="{{old('type')}}" required>
 
             @if ($errors->first('type'))

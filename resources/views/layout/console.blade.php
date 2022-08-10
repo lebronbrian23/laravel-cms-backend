@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel CMS Dashboard</title>
+    <!-- Insert the blade containing the TinyMCE configuration and source script -->
+    <x-head.tinymce-config/>
     <link rel="stylesheet" href="{{ asset('w3.css') }}">
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{url('app.css')}}">
