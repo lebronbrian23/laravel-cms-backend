@@ -14,28 +14,29 @@
                 <img src="{{$project->image}}" width="200">
             @endif
         </div>
-    <form method="post" action="/console/projects/image/{{$project->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
+        <form method="post" action="/console/projects/image/{{$project->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
 
-        @csrf
+            @csrf
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m5 w3-right-align">
-                <label for="image">Image:</label>
-            </div><div class="w3-col m5">
-                <input type="file" name="image" id="image" value="{{old('image')}}" required>
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m5 w3-right-align">
+                    <label for="image">Image:</label>
+                </div><div class="w3-col m5">
+                    <input type="file" name="image" id="image" value="{{old('image')}}" required>
 
-            @if ($errors->first('image'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('image')}}</span>
-            @endif
+                @if ($errors->first('image'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('image')}}</span>
+                @endif
+                </div>
             </div>
-        </div>
 
-        <button type="submit" class="w3-button button">Add Image</button>
+            <button type="submit" class="w3-button button">Add Image</button>
 
-    </form>
+        </form>
 
-    <a href="/console/projects/list">Back to List</a>
+        <a href="/console/projects/list">Back to List</a>
+    </div>
 </section>
 
 @endsection

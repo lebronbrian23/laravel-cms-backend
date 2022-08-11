@@ -35,7 +35,8 @@
                 <br>
                 <span class="w3-text-red">{{$errors->first('url')}}</span>
             @endif
-        </div></div>
+        </div>
+        </div>
 
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
@@ -83,6 +84,8 @@
 
     </form>
     <a href="/console/projects/list">Back to List</a>
+    </div>
+
 </section>
 
 @endsection

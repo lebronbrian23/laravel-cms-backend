@@ -18,7 +18,7 @@
             <label for="first">First Name:</label>
             </div><div class="w3-col m4">
             <input type="text" name="first" id="first" value="{{old('first', $user->first)}}" required>
-            
+
             @if ($errors->first('first'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('first')}}</span>
@@ -30,7 +30,7 @@
             <label for="last">Last Name:</label>
             </div><div class="w3-col m4">
             <input type="text" name="last" id="last" value="{{old('last', $user->last)}}" required>
-            
+
             @if ($errors->first('last'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('last')}}</span>
@@ -66,7 +66,7 @@
     </form>
 
     <a href="/console/users/list">Back to List</a>
-
+    </div>
 </section>
 
 @endsection

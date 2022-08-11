@@ -9,82 +9,83 @@
     </div>
     <!--Content-->
     <div class="w3-container w3-padding-32">
-    <form method="post" action="/console/projects/edit/{{$project->id}}" novalidate class="w3-margin-bottom">
+        <form method="post" action="/console/projects/edit/{{$project->id}}" novalidate class="w3-margin-bottom">
 
-        @csrf
+            @csrf
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m4 w3-right-align">
-            <label for="title">Title:</label>
-            </div><div class="w3-col m4">
-            <input type="title" name="title" id="title" value="{{old('title', $project->title)}}" required>
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m4 w3-right-align">
+                <label for="title">Title:</label>
+                </div><div class="w3-col m4">
+                <input type="title" name="title" id="title" value="{{old('title', $project->title)}}" required>
 
-            @if ($errors->first('title'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('title')}}</span>
-            @endif
-        </div></div>
+                @if ($errors->first('title'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('title')}}</span>
+                @endif
+            </div></div>
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m4 w3-right-align">
-            <label for="url">URL:</label>
-            </div><div class="w3-col m4">
-            <input type="url" name="url" id="url" value="{{old('url', $project->url)}}">
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m4 w3-right-align">
+                <label for="url">URL:</label>
+                </div><div class="w3-col m4">
+                <input type="url" name="url" id="url" value="{{old('url', $project->url)}}">
 
-            @if ($errors->first('url'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('url')}}</span>
-            @endif
-        </div></div>
+                @if ($errors->first('url'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('url')}}</span>
+                @endif
+            </div></div>
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m4 w3-right-align">
-            <label for="slug">Slug:</label>
-            </div><div class="w3-col m4">
-            <input type="text" name="slug" id="slug" value="{{old('slug', $project->slug)}}" required>
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m4 w3-right-align">
+                <label for="slug">Slug:</label>
+                </div><div class="w3-col m4">
+                <input type="text" name="slug" id="slug" value="{{old('slug', $project->slug)}}" required>
 
-            @if ($errors->first('slug'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('slug')}}</span>
-            @endif
-        </div></div>
+                @if ($errors->first('slug'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('slug')}}</span>
+                @endif
+            </div></div>
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m4 w3-right-align">
-            <label for="description">Content:</label>
-            </div><div class="w3-col m8">
-            <textarea name="content" id="description" required>{{old('content', $project->content)}}</textarea>
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m4 w3-right-align">
+                <label for="description">Content:</label>
+                </div><div class="w3-col m8">
+                <textarea name="content" id="description" required>{{old('content', $project->content)}}</textarea>
 
-            @if ($errors->first('content'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('content')}}</span>
-            @endif
-        </div></div>
+                @if ($errors->first('content'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('content')}}</span>
+                @endif
+            </div></div>
 
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-col m4 w3-right-align">
-            <label for="type_id">Type:</label>
-            </div><div class="w3-col m4">
-            <select name="type_id" id="type_id">
-                <option></option>
-                @foreach($types as $type)
-                    <option value="{{$type->id}}"
-                        {{$type->id == old('type_id', $project->type_id) ? 'selected' : ''}}>
-                        {{$type->title}}
-                    </option>
-                @endforeach
-            </select>
-            @if ($errors->first('type_id'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('type_id')}}</span>
-            @endif
-        </div></div>
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m4 w3-right-align">
+                <label for="type_id">Type:</label>
+                </div><div class="w3-col m4">
+                <select name="type_id" id="type_id">
+                    <option></option>
+                    @foreach($types as $type)
+                        <option value="{{$type->id}}"
+                            {{$type->id == old('type_id', $project->type_id) ? 'selected' : ''}}>
+                            {{$type->title}}
+                        </option>
+                    @endforeach
+                </select>
+                @if ($errors->first('type_id'))
+                    <br>
+                    <span class="w3-text-red">{{$errors->first('type_id')}}</span>
+                @endif
+            </div></div>
 
-        <button type="submit" class="w3-button button">Edit Project</button>
+            <button type="submit" class="w3-button button">Edit Project</button>
 
-    </form>
+        </form>
 
-    <a href="/console/projects/list">Back to List</a>
+        <a href="/console/projects/list">Back to List</a>
+    </div>
 
 </section>
 

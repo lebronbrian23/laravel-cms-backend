@@ -16,20 +16,20 @@
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
                 <label for="first">First Name:</label>
-            </div><div class="w3-col m4">                
+            </div><div class="w3-col m4">
                 <input type="text" name="first" id="first" value="{{old('first')}}" required>
-            
+
             @if ($errors->first('first'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('first')}}</span>
             @endif
-            </div> 
+            </div>
         </div>
 
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
                 <label for="last">Last Name:</label>
-            </div><div class="w3-col m4">  
+            </div><div class="w3-col m4">
                 <input type="text" name="last" id="last" value="{{old('last')}}" required>
 
             @if ($errors->first('last'))
@@ -42,7 +42,7 @@
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
             <label for="email">Email:</label>
-            </div><div class="w3-col m4">  
+            </div><div class="w3-col m4">
             <input type="email" name="email" id="email" value="{{old('email')}}" required>
 
             @if ($errors->first('email'))
@@ -55,7 +55,7 @@
         <div class="w3-row-padding w3-margin-bottom">
             <div class="w3-col m4 w3-right-align">
                 <label for="password">Password:</label>
-            </div><div class="w3-col m4">  
+            </div><div class="w3-col m4">
                 <input type="password" name="password" id="password">
 
             @if ($errors->first('password'))
@@ -69,6 +69,7 @@
 
     </form>
     <a href="/console/users/list">Back to List</a>
+    </div>
 </section>
 
 @endsection

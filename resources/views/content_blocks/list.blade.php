@@ -42,6 +42,7 @@
             <a href="/console/content-blocks/add" class="w3-button button">New Content Block</a>
         </div>
     </div>
+    </div>
 </section>
 
 @endsection

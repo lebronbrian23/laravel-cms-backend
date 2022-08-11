@@ -38,6 +38,7 @@
             <a href="/console/skill/add" class="w3-button button">New Skill</a>
         </div>
     </div>
+    </div>
 </section>
 
 @endsection

@@ -18,20 +18,20 @@
             <label for="title">Title:</label>
             </div><div class="w3-col m4">
             <input type="text" name="title" id="title" value="{{old('title')}}" required>
-            
+
             @if ($errors->first('title'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('title')}}</span>
             @endif
         </div>
-    </div> 
+    </div>
 
         <button type="submit" class="w3-button button">Add Type</button>
 
     </form>
 
     <a href="/console/types/list">Back to List</a>
-
+    </div>
 </section>
 
 @endsection

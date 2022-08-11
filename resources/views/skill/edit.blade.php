@@ -30,6 +30,7 @@
     </form>
 
     <a href="/console/skill/list">Back to List</a>
+    </div>
 
 </section>
 

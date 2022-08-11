@@ -18,7 +18,7 @@
             <th></th>
             <th></th>
         </tr>
-        <?php foreach($users as $user): ?>
+        @foreach($users as $user)
             <tr>
                 <td>{{$user->first}} {{$user->last}}</td>
                 <td>{{$user->email}}</td>
@@ -26,11 +26,12 @@
                 <td><a href="/console/users/edit/{{$user->id}}" class="fake-button">Edit</a></td>
                 <td><a href="/console/users/delete/{{$user->id}}" class="fake-button">Delete</a></td>
             </tr>
-        <?php endforeach; ?>
+         @endforeach
         </table>
         <div class="w3-center w3-padding-16">
         <a href="/console/users/add" class="w3-button button">New User</a>
         </div>
+    </div>
     </div>
 </section>
 

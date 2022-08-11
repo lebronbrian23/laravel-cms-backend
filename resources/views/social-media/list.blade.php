@@ -42,6 +42,7 @@
             <a href="/console/social-media/add" class="w3-button button">New Social Media</a>
         </div>
     </div>
+    </div>
 </section>
 
 @endsection

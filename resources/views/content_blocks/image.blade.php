@@ -36,7 +36,7 @@
     </form>
 
     <a href="/console/content-blocks/list">Back to List</a>
-
+    </div>
 </section>
 
 @endsection
